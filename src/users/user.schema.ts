@@ -11,6 +11,7 @@ export const UserSchema = new mongoose.Schema({
     required: true,
     validate: {
       validator: function (name) {
+        // Expresión regular para validar el formato del correo electrónico
         return /^[a-zA-ZÀ-ÖØ-öø-ÿ\s]+$/.test(name);
       },
       message: (props) => `${props.value} no es un nombre válido!`,
